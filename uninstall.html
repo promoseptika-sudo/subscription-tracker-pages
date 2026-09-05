@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Uninstall feedback — Subscription Tracker</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="page-uninstall">
+    <main>
+      <h1>Sorry to see you go</h1>
+      <p class="uninstall-message">
+        Yes — we know Subscription Tracker isn’t perfect. We deliberately chose not to use cloud
+        services so your data never leaves your device. Our own built-in extractor hasn’t been tested
+        on every site you might use. We’d be grateful if you describe what led you to uninstall.
+      </p>
+
+      <div id="form-mount">
+        <div class="form-placeholder" id="form-placeholder">
+          <p>Feedback form is not configured yet.</p>
+          <p>
+            Owner: set <code>formEmbedUrl</code> in
+            <code>store-pages/config.js</code> (see
+            <code>docs/STORE-PAGES-CWS-RU.md</code>).
+          </p>
+        </div>
+      </div>
+    </main>
+    <script src="config.js"></script>
+    <script>
+      (function () {
+        var url = window.ST_STORE_PAGES && window.ST_STORE_PAGES.formEmbedUrl;
+        if (!url) return;
+        var mount = document.getElementById('form-mount');
+        mount.innerHTML = '';
+        var iframe = document.createElement('iframe');
+        iframe.className = 'form-frame';
+        iframe.src = url;
+        iframe.title = 'Why did you uninstall Subscription Tracker?';
+        mount.appendChild(iframe);
+      })();
+    </script>
+  </body>
+</html>

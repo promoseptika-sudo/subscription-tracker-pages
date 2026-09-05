@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!--
+    СТОП ДЛЯ ПУБЛИКАЦИИ (CWS) — privacy.html:
+    1. Обновить дату в строке "Last updated" на день публикации.
+    2. В §9 Contact Us — указать реальный support email (сейчас placeholder).
+    3. В §7 — подставить финальный URL welcome (после GitHub Pages), тот же что в store-urls.ts и CWS Homepage.
+    Не выкладывать на GitHub Pages / не подставлять URL в CWS, пока все пункты не сделаны.
+  -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Privacy Policy — Subscription Tracker</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Privacy Policy — Subscription Tracker</h1>
+      <p class="lead">Track subscriptions and trial renewals in one Chrome side panel.</p>
+      <p class="updated">Last updated: August 27, 2026</p>
+      <!-- СТОП CWS: обновить дату выше перед публикацией -->
+
+      <div class="card card-highlight">
+        <p>
+          <strong>Summary.</strong>
+          Your subscription list and settings are stored <strong>locally on your device</strong>
+          in Chrome extension storage. We do not sell your data or run advertising profiles.
+          Page reading and network transfer happen only when <strong>you</strong> use capture,
+          billing, or optional mobile import — never as silent background harvesting.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>1. Information We Collect</h2>
+        <p>To provide subscription tracking and capture, the extension may handle:</p>
+        <ul>
+          <li>
+            <strong>Subscriptions you save</strong> — name, price, currency, billing cycle,
+            next charge date, notes, colors, and related fields you enter or confirm.
+          </li>
+          <li>
+            <strong>Extension settings</strong> — reminder offsets, auto-capture opt-in,
+            domain blacklist, and UI preferences.
+          </li>
+          <li>
+            <strong>Reminder state</strong> — which renewal notifications were already shown
+            (stored locally for alarms you enable).
+          </li>
+          <li>
+            <strong>Web page text (user-initiated only)</strong> — when you press ⌖, use the
+            keyboard shortcut (<code>Ctrl+Shift+S</code> / <code>Command+Shift+S</code>),
+            enable auto-capture and click a billing control, open billing from the extension,
+            or paste email text into Add — the extension reads visible page or pasted text
+            <strong>only on that action</strong> to suggest subscription fields.
+          </li>
+          <li>
+            <strong>Mobile import payloads (optional)</strong> — if you start a mobile import
+            session and agree to the relay disclosure, text or a screenshot you send from your
+            phone is uploaded to a <strong>temporary relay</strong> so the desktop extension can
+            receive it once. Screenshots may be sent to an OCR provider for text extraction.
+          </li>
+        </ul>
+        <p class="notice">
+          We do not collect passwords, payment card numbers, or credentials. Do not use mobile
+          import for secrets you are unwilling to send through the temporary relay.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>2. How We Use Your Information</h2>
+        <p>Information is used only to operate features you request:</p>
+        <ul>
+          <li>Display and edit your subscription list in the side panel.</li>
+          <li>Prefill capture forms from billing or checkout pages you choose.</li>
+          <li>Show renewal reminders via Chrome alarms and notifications.</li>
+          <li>Detect duplicates and offer update instead of creating a second entry.</li>
+          <li>Transfer optional mobile import data from phone to desktop once per session.</li>
+        </ul>
+        <p>
+          We do <strong>not</strong> use your data for advertising, interest-based profiling,
+          or marketing analytics.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>3. Data Storage, Security &amp; Interface Usage</h2>
+
+        <p><strong>Local storage (chrome.storage.local)</strong></p>
+        <p>
+          Your subscription list, settings, and reminder state are stored on your device using
+          Chrome’s extension storage APIs. Uninstalling the extension removes this local data
+          unless you use Chrome sync features outside our control.
+        </p>
+
+        <p><strong>Side panel (sidePanel permission)</strong></p>
+        <p>
+          The side panel is the main UI for your list, capture cards, Add/Edit forms, and
+          settings. It runs as part of the extension — not as a remote website inside the panel.
+        </p>
+
+        <p><strong>Tabs &amp; scripting (tabs, scripting permissions)</strong></p>
+        <p>
+          Used to run capture logic on the active tab when <strong>you</strong> trigger capture or
+          billing actions, and to open pages you explicitly request (for example a billing portal
+          link or the welcome page on first install).
+        </p>
+
+        <p><strong>Host access (&lt;all_urls&gt;)</strong></p>
+        <p>
+          Broad host permission is required because subscriptions can live on many merchant and
+          checkout domains. The extension does <strong>not</strong> read arbitrary sites in the
+          background. Access is tied to user actions such as ⌖, hotkey capture, opted-in
+          auto-capture, or opening billing from the extension.
+        </p>
+
+        <p><strong>Mobile import relay (optional network transfer)</strong></p>
+        <p>
+          When you use mobile import, payload data is sent to a Cloudflare Worker relay operated
+          for this extension. Sessions are short-lived (about <strong>10 minutes</strong>), consumed
+          once on the desktop, and deleted automatically. Screenshot imports may call
+          <strong>OCR.space</strong> to extract text; only the image you submit is processed for
+          that request.
+        </p>
+
+        <p class="notice notice-success">
+          Core subscription data stays on your device. Network transfer is limited to optional
+          mobile import (and standard HTTPS requests such as loading this policy page).
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>4. Limited Use Disclosure</h2>
+        <p>
+          Use of information received through Chrome extension APIs follows the
+          <a href="https://developer.chrome.com/docs/webstore/program-policies/limited-use/"
+            >Chrome Web Store User Data Policy</a
+          >, including Limited Use requirements:
+        </p>
+        <ul>
+          <li>
+            <strong>Allowed use</strong> — only to provide or improve subscription tracking and
+            capture (the extension’s single purpose).
+          </li>
+          <li>
+            <strong>Allowed transfer</strong> — to the mobile import relay and OCR provider only
+            when you start mobile import; otherwise data stays on-device except as required by law
+            or for abuse investigation.
+          </li>
+          <li>
+            <strong>Prohibited advertising</strong> — we do not use or transfer user data for
+            personalized or interest-based ads.
+          </li>
+          <li>
+            <strong>Prohibited human reading</strong> — we do not routinely read user content.
+            Limited exceptions: your explicit support request, security investigation, or legal
+            obligation.
+          </li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>5. Third-Party Sharing</h2>
+        <p>We do not sell your personal data. Limited third parties may process data only as follows:</p>
+        <ul>
+          <li>
+            <strong>Cloudflare Workers</strong> — temporary mobile import relay (session payloads,
+            auto-deleted).
+          </li>
+          <li>
+            <strong>OCR.space</strong> — optional screenshot text extraction during mobile import
+            only.
+          </li>
+          <li>
+            <strong>Google Forms</strong> — optional uninstall feedback if you choose to submit the
+            form on our uninstall page (governed by Google’s privacy policy).
+          </li>
+          <li>
+            <strong>GitHub Pages</strong> — hosts this welcome, privacy, and uninstall documentation
+            (static pages; the extension does not send your subscription list to GitHub).
+          </li>
+        </ul>
+        <p>We do not use advertising networks or tracking pixels in the extension UI.</p>
+      </div>
+
+      <div class="card">
+        <h2>6. Your Rights: Access &amp; Deletion</h2>
+        <ul>
+          <li>
+            <strong>Access</strong> — view and edit all saved subscriptions in the side panel at any
+            time.
+          </li>
+          <li>
+            <strong>Deletion</strong> — delete individual subscriptions in the app, clear data in
+            extension settings where available, or uninstall the extension to remove local storage.
+          </li>
+          <li>
+            <strong>Mobile import</strong> — each session is one-time; after successful import the
+            relay session cannot be reused. You can decline mobile import and use manual Add or
+            email paste instead.
+          </li>
+          <li>
+            <strong>Opt-out of auto-capture</strong> — turn off auto-capture in settings; capture
+            then requires your explicit ⌖ or hotkey action.
+          </li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>7. Automatic Navigation (Installation &amp; Uninstall)</h2>
+        <p><strong>First install</strong></p>
+        <p>
+          On first installation, the extension may open our welcome page in a new tab:
+        </p>
+        <p><code>https://&lt;github-user&gt;.github.io/&lt;repo&gt;/store-pages/welcome.html</code></p>
+        <!-- СТОП CWS: заменить placeholder выше на финальный URL welcome (GitHub Pages) -->
+        <p>
+          This page is informational only. The extension does not attach your subscription data to
+          that request. No tracking identifiers are added beyond a normal browser page load.
+        </p>
+        <p><strong>Uninstall</strong></p>
+        <p>
+          When configured, Chrome may open our uninstall feedback page with an optional Google
+          Form. Submitting the form is voluntary; answers go to Google, not into your local
+          subscription list.
+        </p>
+      </div>
+
+      <div class="card" id="permissions">
+        <h2>8. Permissions Reference</h2>
+        <ul>
+          <li><strong>storage</strong> — save subscriptions and settings locally.</li>
+          <li><strong>sidePanel</strong> — main subscription list and capture UI.</li>
+          <li><strong>tabs</strong> — active tab context for user-initiated capture and billing.</li>
+          <li><strong>scripting</strong> — inject capture helpers when you start capture.</li>
+          <li><strong>alarms</strong> — schedule local renewal reminders.</li>
+          <li><strong>notifications</strong> — show renewal reminders you configure.</li>
+          <li><strong>host_permissions (&lt;all_urls&gt;)</strong> — read merchant pages only on your capture/billing actions.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>9. Contact Us</h2>
+        <!-- СТОП CWS: заменить текст ниже на реальный email поддержки -->
+        <p>
+          For privacy questions, use the <strong>support contact</strong> on the Chrome Web Store
+          listing for Subscription Tracker. A dedicated support email may be added on this page
+          before public release.
+        </p>
+      </div>
+
+      <div class="compliance">
+        <p>
+          <strong>Chrome Web Store compliance.</strong>
+          Subscription Tracker follows the Chrome Web Store User Data Policy. Subscription data is
+          stored locally by default. Optional mobile import uses a short-lived relay and OCR only
+          with your consent. No data sales, no ad targeting, Limited Use respected.
+        </p>
+      </div>
+
+      <footer>
+        <a href="welcome.html">Welcome</a>
+        <a href="uninstall.html">Uninstall feedback</a>
+      </footer>
+    </main>
+  </body>
+</html>
