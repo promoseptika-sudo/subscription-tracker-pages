@@ -2,7 +2,7 @@
 <html lang="en">
   <!--
     СТОП ДЛЯ ПУБЛИКАЦИИ (CWS) — privacy.html:
-    1. Last updated — September 12, 2026 (при следующих правках — обновить дату).
+    1. Last updated — October 17, 2026 (при следующих правках — обновить дату).
     2. §9 Contact Us — Promoseptika@gmail.com (как в CWS Contact).
     3. В §7 — подставить финальный URL welcome (после GitHub Pages), тот же что в store-urls.ts и CWS Homepage.
     Не выкладывать на GitHub Pages / не подставлять URL в CWS, пока все пункты не сделаны.
@@ -17,7 +17,7 @@
     <main>
       <h1>Privacy Policy — Subscription Tracker</h1>
       <p class="lead">Track subscriptions and trial renewals in one Chrome side panel.</p>
-      <p class="updated">Last updated: September 12, 2026</p>
+      <p class="updated">Last updated: October 17, 2026</p>
 
       <div class="card card-highlight">
         <p>
@@ -89,6 +89,12 @@
           Your subscription list, settings, and reminder state are stored on your device using
           Chrome’s extension storage APIs. Uninstalling the extension removes this local data
           unless you use Chrome sync features outside our control.
+        </p>
+        <p>
+          <strong>Backup export/import</strong> (Settings) downloads or reads a JSON file you
+          choose on this device. Backup files are not uploaded to us. If you save a backup to
+          Downloads or another folder, that file stays on your device until <strong>you</strong>
+          delete it — uninstalling the extension does not remove files you already exported.
         </p>
 
         <p><strong>Side panel (sidePanel permission)</strong></p>
@@ -189,8 +195,9 @@
             time.
           </li>
           <li>
-            <strong>Deletion</strong> — delete individual subscriptions in the app, clear data in
-            extension settings where available, or uninstall the extension to remove local storage.
+            <strong>Deletion</strong> — remove individual subscriptions in the side panel, or
+            uninstall the extension to remove data stored in Chrome extension storage. Exported
+            backup JSON files on your computer are yours to delete separately (see §3).
           </li>
           <li>
             <strong>Mobile import</strong> — each session is one-time; after successful import the
